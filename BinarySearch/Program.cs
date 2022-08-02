@@ -7,4 +7,4 @@ BinarySearch<int> binarySearch = new(myList);
 Console.WriteLine(ConvertToString(binarySearch.Search(3)));
 Console.WriteLine(ConvertToString(binarySearch.Search(-1)));
 
-string ConvertToString(int? value) => value.HasValue ? value.ToString() : "No Value";
+static string? ConvertToString(int? value) => value is null ? "No Value" : value.ToString();

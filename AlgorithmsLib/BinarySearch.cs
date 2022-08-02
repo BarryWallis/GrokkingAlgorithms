@@ -10,9 +10,9 @@ namespace AlgorithmsLib;
 /// <exception cref="ArgumentException">
 /// <paramref name="Items"/> must be in ascending order.
 /// </exception>
-public record BinarySearch<T>(IReadOnlyList<T> Items) where T : IComparable<T>
+public record BinarySearch<T>(IList<T> Items) where T : IComparable<T>
 {
-    private IReadOnlyList<T> Items { get; init; }
+    private IList<T> Items { get; init; }
         = Items.Count < 2
           ? throw new ArgumentException("Must have at least two elements.", nameof(Items))
           : Items.IsInAscendingOrder()

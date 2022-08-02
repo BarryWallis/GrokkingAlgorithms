@@ -32,7 +32,17 @@ public class UtiilityTests
 
         ArgumentException ex
             = Assert.ThrowsException<ArgumentException>(() => list.IsInAscendingOrder());
-        Assert.AreEqual("Parameter \"items\" (System.Collections.Generic.IReadOnlyCollection<int>) " +
+        Assert.AreEqual("Parameter \"items\" (System.Collections.Generic.ICollection<int>) " +
             "must have a size of at least 2, had a size of <1> (Parameter 'items')", ex.Message);
+    }
+
+    [TestMethod]
+    public void SelectionSortArrayReturnsSortedList()
+    {
+        List<int> items = new() { 5, 3, 6, 2, 10, };
+
+        IList<int> actual = items.SelectionSort();
+
+        Assert.IsTrue(actual.IsInAscendingOrder());
     }
 }
