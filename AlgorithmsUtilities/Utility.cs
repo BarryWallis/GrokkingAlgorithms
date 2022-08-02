@@ -21,4 +21,7 @@ public static class Utility
 
         return true;
     }
+
+    public static IList<T> SelectionSort<T>(this IReadOnlyList<T> items)
+        => throw new NotImplementedException();
 }
