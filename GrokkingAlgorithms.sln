@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32721.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsLib", "AlgorithmsLib\AlgorithmsLib.csproj", "{FAC08D87-9182-4E1E-8CEB-B42BE14BA152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsLib", "AlgorithmsLib\AlgorithmsLib.csproj", "{FAC08D87-9182-4E1E-8CEB-B42BE14BA152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsTests", "AlgorithmsTests\AlgorithmsTests.csproj", "{A13DB375-AD8F-4673-BA10-CBD753B3FC73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsTests", "AlgorithmsTests\AlgorithmsTests.csproj", "{A13DB375-AD8F-4673-BA10-CBD753B3FC73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsUtilities", "AlgorithmsUtilities\AlgorithmsUtilities.csproj", "{A5A622C2-7B95-4CDC-A177-EB9BD7B73B3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsUtilities", "AlgorithmsUtilities\AlgorithmsUtilities.csproj", "{A5A622C2-7B95-4CDC-A177-EB9BD7B73B3C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsUtilitiesTests", "AlgorithmsUtilitiesTests\AlgorithmsUtilitiesTests.csproj", "{DCCD7896-DEF0-42E7-AB36-9D1D2C6D9C78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearch", "BinarySearch\BinarySearch.csproj", "{135324CF-4920-42A6-B2DB-4296F8117C64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearch", "BinarySearch\BinarySearch.csproj", "{135324CF-4920-42A6-B2DB-4296F8117C64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quicksort", "Quicksort\Quicksort.csproj", "{CA37FC4E-B7A1-4BF9-B63A-BAC465EBDB9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{135324CF-4920-42A6-B2DB-4296F8117C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{135324CF-4920-42A6-B2DB-4296F8117C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{135324CF-4920-42A6-B2DB-4296F8117C64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA37FC4E-B7A1-4BF9-B63A-BAC465EBDB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA37FC4E-B7A1-4BF9-B63A-BAC465EBDB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA37FC4E-B7A1-4BF9-B63A-BAC465EBDB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA37FC4E-B7A1-4BF9-B63A-BAC465EBDB9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

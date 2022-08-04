@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Numerics;
 
 using CommunityToolkit.Diagnostics;
 
@@ -79,4 +80,78 @@ public static class Utility
             return smallestIndex;
         }
     }
+
+    /// <summary>
+    /// Calculate the sum of a collection of numbers.
+    /// </summary>
+    /// <typeparam name="T">The type of numbers in the list. Must be an INumber.</typeparam>
+    /// <param name="numbers">The list of numbers.</param>
+    /// <returns>The sum of the numbers in the list.</returns>
+    public static T Sum<T>(this IEnumerable<T> numbers) where T : INumber<T>
+        => numbers.Any() ? numbers.First() + numbers.Skip(1).Sum() : T.Zero;
+
+    /// <summary>
+    /// Count the number of items in a collection.
+    /// </summary>
+    /// <typeparam name="T">The type of items in the collection.</typeparam>
+    /// <param name="items">The collection o items.</param>
+    /// <returns>The number of items in the collection.</returns>
+    public static int Count<T>(this IEnumerable<T> items)
+        => items.Any() ? 1 + items.Skip(1).Count() : 0;
+
+    /// <summary>
+    /// Find the maximum value in  collection.
+    /// </summary>
+    /// <typeparam name="T">The type of items in the collection.</typeparam>
+    /// <param name="items">The items in the collection.</param>
+    /// <returns>The maximum value of the items in the collection.</returns>
+    public static T Max<T>(this IEnumerable<T> items) where T : IComparable<T>
+    {
+        T currentMax;
+        if (items.Count() == 2)
+        {
+            return items.First().CompareTo(items.Take(1).First()) > 0 ? items.First()
+                                                                      : items.Take(1).First();
+        }
+        currentMax = items.Skip(1).Max();
+        return items.First().CompareTo(currentMax) > 0 ? items.First() : currentMax;
+    }
+
+    /// <summary>
+    /// Sort a collection using Quicksort. 
+    /// </summary>
+    /// <remarks>
+    /// This extension method returns a new collection. The <paramref name="items"/> collection is 
+    /// unchanged.
+    /// </remarks>
+    /// <typeparam name="T">The type of items in the collection.</typeparam>
+    /// <param name="items">The collection to sort.</param>
+    /// <returns>The sorted collection.</returns>
+    public static IEnumerable<T> Quicksort<T>(this IEnumerable<T> items) where T : IComparable<T>
+    {
+        List<T> result = new();
+        if (items.Count() < 2)
+        {
+            return items;
+        }
+
+        T pivot = items.First();
+        IEnumerable<T> lessThanPivot = items.Where(t => t.CompareTo(pivot) < 0);
+        IEnumerable<T> greaterThanPivot = items.Where(t => t.CompareTo(pivot) > 0);
+
+        foreach (T item in lessThanPivot.Quicksort())
+        {
+            result.Add(item);
+        }
+
+        result.Add(pivot);
+
+        foreach (T item in greaterThanPivot.Quicksort())
+        {
+            result.Add(item);
+        }
+
+        return result;
+    }
+
 }
